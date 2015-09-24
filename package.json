@@ -1,0 +1,41 @@
+{
+  "name": "metalsmith-updated",
+  "version": "0.1.0",
+  "description": "Metalsmith plugin for adding created and updated attributes to files.",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://gitlab.com/blue-systems-group/code.metalsmith-updated/issues"
+  },
+  "homepage": "https://gitlab.com/blue-systems-group/code.metalsmith-updated",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:blue-systems-group/code.metalsmith-updated.git"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha --reporter spec --slow 2000"
+  },
+  "keywords": [
+    "metalsmith"
+  ],
+  "author": {
+    "name": "Geoffrey Challen",
+    "email": "challen@buffalo.edu"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "async": "^1.4.2",
+    "jsonfile": "^2.2.2",
+    "md5": "^2.0.0",
+    "minimatch": "^2.0.10",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "chai-fs": "^0.1.0",
+    "harmonize": "^1.4.4",
+    "metalsmith": "^2.0.1",
+    "mocha": "^2.3.3",
+    "power-assert": "^1.0.1"
+  }
+}
