@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "chai": "^1.10.0",
+    "chai-datetime": "^1.4.0",
     "chai-fs": "^0.1.0",
     "harmonize": "^1.4.4",
     "metalsmith": "^2.0.1",
