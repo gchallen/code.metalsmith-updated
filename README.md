@@ -45,11 +45,16 @@ updated.
 * `modified`: set if the file has been modified since it was created. This
   implies that `created != modified`.
 
-metalsmith identifies files by filename and changes by hashing
+metalsmith-updated identifies files by filename and changes by hashing
 `file.contents`. Timestamps are set to `metadata.date` if it exists (for
 compatibility with
 [metalsmith-build-date](https://www.npmjs.com/package/metalsmith-build-date)),
-or to 
+or to `new Date()` if not.
+
+Note that metalsmith-updated *will not* override these attributes if they
+already exist on any file, but will save dutifully to its comparison file.
+This can be useful for bootstrapping metalsmith-updated for existing blog
+posts, for example.
 
 ### Options
 
@@ -62,45 +67,23 @@ are available:
 
 If set a message will be printed if files generate warnings or errors.
 
-#### `failWithoutNetwork` (optional)
+#### `ignoreKeys` (optional)
 
-(default : *true*)
+(default: `["draft"]`)
 
-If set, metalsmith-updated will fail if no network
-connection is available.
+metalsmith-updated will ignore files that have "truthy" values in any of
+these keys.
 
-#### `failErrors` (optional)
+#### `filePatterns` (optional)
 
-(default: *true*)
+(default: `[]`)
 
-If set the metalsmith build process will halt if any files have format
-errors.
+A list of minimatch patterns to constrain the files that metalsmith-updated
+will examine. `["*.html"]` is a potentially-useful option.
 
-#### `failWarnings` (optional)
+#### `updatedFile` (optional)
 
-(default: *false*)
+(default: *`.updated.json`*)
 
-If set the metalsmith build process will halt if any files have format
-warnings.
-
-#### `cacheChecks` (optional)
-
-(default: *true*)
-
-If set metalsmith-updated will record when external links succeed in
-`checkFile` and not repeat the check for an interval set by `recheckMinutes`.
-
-#### `checkFile` (optional)
-
-(default: *`.format_checked.json`*)
-
-Path relative to the metalsmith source directory where
-metalsmith-updated caches link check information. This will be removed from
-the build directory.
-
-#### `failFile` (optional)
-
-(default: *`format_failed.json`*)
-
-Path relative to the metalsmith source directory to a JSON file where link
-failures are recorded. This will be removed from the build directory.
+Path relative to the metalsmith source directory where metalsmith-updated
+caches file information. This will be removed from the build directory.
