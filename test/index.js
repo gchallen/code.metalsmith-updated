@@ -8,8 +8,7 @@ var metalsmith = require('metalsmith'),
     jsonfile = require('jsonfile'),
     async = require('async'),
     powerAssert = require('power-assert'),
-    updated = require('..'),
-    updatedDefaults = require('../lib/updatedDefaults.js');
+    updated = require('..');
 
 chai.use(require('chai-fs'));
 chai.use(require('chai-datetime'));
@@ -32,8 +31,8 @@ function check_files(files, defaults) {
 
 describe('metalsmith-updated', function() {
   it('should annotate new files with the default parameters', function(done) {
-    var defaults = _.clone(updatedDefaults.defaults);
-    var test_defaults = updatedDefaults.processConfig(defaults, path.join(src, 'src'));
+    var defaults = _.clone(updated.defaults);
+    var test_defaults = updated.processConfig(defaults, path.join(src, 'src'));
     reset_files(test_defaults);
 
     var check_time = new Date();
@@ -64,8 +63,8 @@ describe('metalsmith-updated', function() {
       });
   });
   it('should ignore drafts with the default parameters', function(done) {
-    var defaults = _.clone(updatedDefaults.defaults);
-    var test_defaults = updatedDefaults.processConfig(defaults, path.join(src, 'src'));
+    var defaults = _.clone(updated.defaults);
+    var test_defaults = updated.processConfig(defaults, path.join(src, 'src'));
     reset_files(test_defaults);
 
     var check_time = new Date();
@@ -98,9 +97,9 @@ describe('metalsmith-updated', function() {
       });
   });
   it('should include files based on patterns', function(done) {
-    var defaults = _.clone(updatedDefaults.defaults);
+    var defaults = _.clone(updated.defaults);
     defaults.filePatterns = ["*.html"];
-    var test_defaults = updatedDefaults.processConfig(defaults, path.join(src, 'src'));
+    var test_defaults = updated.processConfig(defaults, path.join(src, 'src'));
     reset_files(test_defaults);
 
     var check_time = new Date();
@@ -132,8 +131,8 @@ describe('metalsmith-updated', function() {
       });
   });
   it('annotate not update unchanged files with the default parameters', function(done) {
-    var defaults = _.clone(updatedDefaults.defaults);
-    var test_defaults = updatedDefaults.processConfig(defaults, path.join(src, 'src'));
+    var defaults = _.clone(updated.defaults);
+    var test_defaults = updated.processConfig(defaults, path.join(src, 'src'));
     reset_files(test_defaults);
 
     var check_time = new Date();
@@ -196,9 +195,9 @@ describe('metalsmith-updated', function() {
       });
   });
   it('should not override explicit dates', function(done) {
-    var defaults = _.clone(updatedDefaults.defaults);
+    var defaults = _.clone(updated.defaults);
     defaults.filePatterns = ["*.html"];
-    var test_defaults = updatedDefaults.processConfig(defaults, path.join(src, 'src'));
+    var test_defaults = updated.processConfig(defaults, path.join(src, 'src'));
     reset_files(test_defaults);
 
     var check_time = new Date();
