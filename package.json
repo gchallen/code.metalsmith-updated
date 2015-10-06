@@ -1,15 +1,15 @@
 {
   "name": "metalsmith-updated",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Metalsmith plugin for adding created and updated attributes to files.",
   "readmeFilename": "README.md",
   "bugs": {
-    "url": "https://gitlab.com/blue-systems-group/code.metalsmith-updated/issues"
+    "url": "https://github.com/gchallen/code.metalsmith-updated/issues"
   },
-  "homepage": "https://gitlab.com/blue-systems-group/code.metalsmith-updated",
+  "homepage": "https://github.com/gchallen/code.metalsmith-updated",
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com:blue-systems-group/code.metalsmith-updated.git"
+    "url": "git@github.com:gchallen/code.metalsmith-updated.git"
   },
   "main": "lib/index.js",
   "scripts": {
