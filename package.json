@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-updated",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Metalsmith plugin for adding created and updated attributes to files.",
   "readmeFilename": "README.md",
   "bugs": {
