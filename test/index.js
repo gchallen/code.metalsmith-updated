@@ -38,7 +38,9 @@ describe('metalsmith-updated', function() {
     metalsmith(src)
       .use(function (files, metalsmith, innerDone) {
         metalsmith.metadata()['date'] = check_time;
-        files['new.html'] = new Buffer("New contents");
+        files['new.html'] = {
+					contents: new Buffer("New contents")
+				}
         innerDone();
       })
       .use(updated(defaults))
@@ -70,9 +72,13 @@ describe('metalsmith-updated', function() {
     metalsmith(src)
       .use(function (files, metalsmith, innerDone) {
         metalsmith.metadata()['date'] = check_time;
-        files['new.html'] = new Buffer("New contents");
-        files['ignore.html'] = new Buffer("Other contents");
-        files['ignore.html'].draft = true;
+        files['new.html'] = {
+					contents: new Buffer("New contents")
+				}
+        files['ignore.html'] = {
+					contents: new Buffer("Other contents"),
+					draft: true
+				}
         innerDone();
       })
       .use(updated(defaults))
@@ -105,8 +111,12 @@ describe('metalsmith-updated', function() {
     metalsmith(src)
       .use(function (files, metalsmith, innerDone) {
         metalsmith.metadata()['date'] = check_time;
-        files['new.html'] = new Buffer("New contents");
-        files['ignore.adoc'] = new Buffer("Other contents");
+        files['new.html'] = {
+					contents: new Buffer("New contents")
+				}
+        files['ignore.adoc'] = {
+					contents: new Buffer("Other contents")
+				}
         innerDone();
       })
       .use(updated(defaults))
@@ -140,7 +150,9 @@ describe('metalsmith-updated', function() {
         metalsmith(src)
           .use(function (files, metalsmith, innerDone) {
             metalsmith.metadata()['date'] = check_time;
-            files['new.html'] = new Buffer("New contents");
+            files['new.html'] = {
+							contents: new Buffer("New contents")
+						}
             innerDone();
           })
           .use(updated(defaults))
@@ -166,7 +178,9 @@ describe('metalsmith-updated', function() {
         metalsmith(src)
           .use(function (files, metalsmith, innerDone) {
             metalsmith.metadata()['date'] = check_time;
-            files['new.html'] = new Buffer("New contents");
+            files['new.html'] = {
+							contents: new Buffer("New contents")
+						}
             innerDone();
           })
           .use(updated(defaults))
@@ -206,9 +220,13 @@ describe('metalsmith-updated', function() {
         metalsmith(src)
           .use(function (files, metalsmith, innerDone) {
             metalsmith.metadata()['date'] = check_time;
-            files['new.html'] = new Buffer("New contents");
-            files['manual.html'] = new Buffer("Other contents");
-            files['manual.html'].created = created;
+            files['new.html'] = {
+							contents: new Buffer("New contents")
+						}
+            files['manual.html'] = {
+							contents: new Buffer("Other contents"),
+							created: created
+						}
             innerDone();
           })
           .use(updated(defaults))
@@ -239,9 +257,13 @@ describe('metalsmith-updated', function() {
         metalsmith(src)
           .use(function (files, metalsmith, innerDone) {
             metalsmith.metadata()['date'] = check_time;
-            files['new.html'] = new Buffer("New contents");
-            files['manual.html'] = new Buffer("Other contents");
-            files['manual.html'].created = created;
+            files['new.html'] = {
+							contents: new Buffer("New contents")
+						}
+            files['manual.html'] = {
+							contents: new Buffer("Other contents"),
+							created: created
+						}
             innerDone();
           })
           .use(updated(defaults))
