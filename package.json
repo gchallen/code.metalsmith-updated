@@ -24,18 +24,18 @@
   },
   "license": "MIT",
   "dependencies": {
-    "async": "^2.0.1",
-    "jsonfile": "^2.2.2",
-    "md5": "^2.0.0",
-    "minimatch": "^3.0.2",
+    "async": "^2.1.4",
+    "jsonfile": "^2.4.0",
+    "md5": "^2.2.1",
+    "minimatch": "^3.0.3",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "chai-datetime": "^1.4.0",
-    "chai-fs": "^0.1.0",
-    "metalsmith": "^2.0.1",
-    "mocha": "^2.3.3",
-    "power-assert": "^1.0.1"
+    "chai-datetime": "^1.4.1",
+    "chai-fs": "^1.0.0",
+    "metalsmith": "^2.3.0",
+    "mocha": "^3.2.0",
+    "power-assert": "^1.4.2"
   }
 }
